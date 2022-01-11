@@ -8,6 +8,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 const useStyles = makeStyles({
     root: {
         textAlign: 'center',
+        margin: '5px'
     },
     typo: {
         flexGrow: 1

@@ -13,10 +13,10 @@ const useStyles = makeStyles({
 })
 
 function Todo() {
-    const [input, SetInput] = useState("내용을 입력하세요.");
+    const [input, SetInput] = useState("");
     const [todo, SetTodo] = useState([]);
 
-    function addTodo(event){
+    function addTodo (event){
         SetTodo(addData => {
             return [...addData, input];
         })
@@ -37,7 +37,7 @@ function Todo() {
                     <Button onClick={addTodo} ><AddIcon/></Button>
                 </div>
                 <div>
-                    {todo.map((item, index) => (
+                    {todo.map((item, index, key) => (
                         <TodoList
                             key={index}
                             id={index}

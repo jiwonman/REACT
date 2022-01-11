@@ -1,12 +1,18 @@
 import React from 'react'
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Button } from '@mui/material';
 
-function TodoList(item, index) {
+function TodoList({item, id}) {
+
     return (
         <div>
-            <ul>
-                {index}{item}
-            </ul>
+            <ol start={id+1}>
+                <li>
+                    {item}<Button ><DeleteIcon/></Button>
+                </li>
+            </ol>
         </div>
+
     )
 }
 
