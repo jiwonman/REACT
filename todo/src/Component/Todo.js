@@ -8,11 +8,22 @@ const useStyles = makeStyles({
     root: {
         textAlign: 'center',
         marginTop: '10%',
-        backgroundColor: 'rgba(255, 255, 128, .5)'
     }
 })
 
+
+
 function Todo() {
+
+    function onRemove(id) {
+        SetTodo(addData=> {
+            return addData.filter((item, index)=>{
+                return index !==id
+            })
+        })
+    }  
+    
+    
     const [input, SetInput] = useState("");
     const [todo, SetTodo] = useState([]);
 
@@ -20,14 +31,15 @@ function Todo() {
         SetTodo(addData => {
             return [...addData, input];
         })
+        SetInput("");
     }
 
     const classes = useStyles();
     return (
 
         <div className={classes.root}>
-            <h1>TodoList</h1>
-            <Container>
+            <h1 style={{width:'400px', margin:'0 auto', backgroundColor: 'rgba(255, 255, 128, .5)'}}>TodoList</h1>
+            <Container style={{width:'400px', margin:'0 auto', backgroundColor: 'rgba(255, 255, 128, .5)'}}>
                 <div>
                     <Input
                         type='text'
@@ -37,11 +49,11 @@ function Todo() {
                     <Button onClick={addTodo} ><AddIcon/></Button>
                 </div>
                 <div>
-                    {todo.map((item, index, key) => (
+                    {todo.map((item, index) => (
                         <TodoList
-                            key={index}
                             id={index}
                             item={item}
+                            onRemove = {onRemove}
                         />
                     ))}
                 </div>
