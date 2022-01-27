@@ -1,0 +1,37 @@
+.container {
+    display: grid;
+    margin: 10%;
+    grid-gap: 80px;
+    font-size: 80px;
+}
+
+.item span:nth-child(1){
+    color: aqua;
+}
+
+.item span:nth-child(2){
+    color: red;
+}
+
+.item span:nth-child(3){
+    color: gold;
+}
+
+.item span:nth-child(4){
+    color: aquamarine;
+}
+
+.item span:nth-child(5){
+    color:yellowgreen;
+}
+
+.item span:nth-child(6){
+    color:red;
+}
+
+.item:nth-child(2) input{
+    background-color: aliceblue;
+    border-radius: 15px;
+    width: 45%;
+}
+
